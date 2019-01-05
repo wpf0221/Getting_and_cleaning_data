@@ -2,9 +2,9 @@
 
 
 ## File list
-run_analysis.R: the R script developed to create the final dataset, MeanData
-code book.md: the code book of the final dataset, MeanData
-MeanData.txt: final dataset
+*run_analysis.R: the R script developed to create the final dataset, MeanData
+*code book.md: the code book of the final dataset, MeanData
+*MeanData.txt: final dataset
 
 ## R script
 As required by the course, the R file, run_analysis.R, does the following tasks:
