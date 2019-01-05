@@ -12,7 +12,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 Each record has the variables with the following labels:
 Subject: an identifier of the subject who carried out the experiment. Its range is from 1 to 30.
 Activity: activities performed by the subjects (volunteers)
-Feature labels: the rest labels are all feature labels. The value is calculated as the average of each feature variable for each activity and each subject. The details of the feature variables are explained below:
+Feature labels: the rest labels are all feature labels. The value is calculated as the average of each feature variable for each activity and each subject. Features are normalized and bounded within [-1,1]. The details of the feature variables are explained below:
 
 The features selected come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 'Time' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -44,7 +44,3 @@ FrequenceBodyGyroJerkMag
 The set of variables that were estimated from these signals are: 
 Mean: mean value ('Mean') 
 Std: standard deviation ('Std')
-
-Notes: 
-======
-- Features are normalized and bounded within [-1,1].
