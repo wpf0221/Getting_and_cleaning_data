@@ -1,6 +1,7 @@
 # Task 1. Merges the training and the test sets to create one data set
 # 1.1 Download the data set and unzip the data set
-download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "./Get_and_cleaning_data/FUCI_HAR_Dataset.zip")
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip",
+              "./Get_and_cleaning_data/FUCI_HAR_Dataset.zip")
 unzip("./Get_and_cleaning_data/FUCI_HAR_Dataset.zip", exdir = "./Get_and_cleaning_data")
 
 # 1.2 Read train and text data into X_train, y_train, X_test, y_test
@@ -42,11 +43,12 @@ features_extracted <- gsub("-std", "Std", features_extracted)
 # 4.2 Update the dataframe column names
 colnames(data_extracted) <- c(c("Subject", "Activity"), features_extracted)
 
-# Task 5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+# Task 5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable 
+# for each activity and each subject.
 library(dplyr)
 # 5.1 Calculate the average values
 MeanData <- data_extracted %>%
   group_by(Subject, Activity) %>%
   summarise_all(funs(mean))
-# 5.2 Write out data set
+# 5.2 Write out data set to the file "MeanData.txt"
 write.table(MeanData, "./Get_and_cleaning_data/MeanData.txt", row.names = FALSE)
